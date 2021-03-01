@@ -8,9 +8,9 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/employee_login')
+@app.route('/login')
 def employee_login():
-    return render_template('SINEUP.html')
+    return render_template('SIGEUP.html')
 
 
 if __name__ == '__main__':
