@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>USER PROFILE PAGE </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <!-- add style css  -->
+    <style>
+        body {
+    margin-top: 20px;
+    background-image: url("193.jpg");
+ background-color: #ffffff;
+ background-repeat: no-repeat;
+ background-size: 80%;
+ background-blend-mode:normal;
+ background-position-x: center;
+ background-position-y: 50px;
+  
+  }
+  
+  .profile .grid-header {
+    background: url("17857.jpg") no-repeat center center;
+    background-size: cover;
+    color: #f5f5f5;
+  }
+  
+  .profile img {
+    max-width: 100%;
+  }
+  
+  .profile .grid-header img {
+    margin: 2em 1em;
+  }
+  
+  .profile .grid-header h3 {
+    color: #f5f5f5 !important;
+    font-weight: 400;
+    margin: 30px 0 20px 0;
+  }
+  
+  .profile .grid-header p {
+    margin-bottom: 5px;
+  }
+  
+  .profile .grid-header p a {
+    color: #f5f5f5;
+  }
+  
+  .profile .grid-body {
+    font-size: 1em;
+  }
+  
+  .profile .tab-content {
+    padding-bottom: 0px;
+  }
+  
+  .profile .stats {
+    margin-top: 20px;
+    padding: 0px 0px 20px;
+    background: #eee;
+    text-align: center;
+    border-top: 1px solid #ccc;
+  }
+  
+  .profile .stats h1 {
+    font-weight: 400;
+    margin-bottom: 0px;
+  }
+  
+  .profile .stats span {
+    margin: 5px 0 10px 0;
+    display: block;
+  }
+  
+  .profile .stats .btn {
+    padding-right: 4em;
+    padding-left: 4em;
+  }
+  
+  .profile .timeline-centered {
+    font-size: 1.15em;
+  }
+  
+  .profile .timeline-centered:before {
+    background: #eee;
+  }
+  
+  .profile .bg-default {
+    border: 1px solid #bbb;
+  }
+  
+  .grid {
+    position: relative;
+    width: 100%;
+    background: #fff;
+    color: #666666;
+    border-radius: 2px;
+    margin-bottom: 25px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .grid .grid-header {
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 10px 10px 20px;
+  }
+  
+  .grid .grid-header:before,
+  .grid .grid-header:after {
+    display: table;
+    content: " ";
+  }
+  
+  .grid .grid-header:after {
+    clear: both;
+  }
+  
+  .grid .grid-header span,
+  .grid .grid-header > .fa {
+    display: inline-block;
+    margin: 0;
+    font-weight: 300;
+    font-size: 1.5em;
+    float: left;
+  }
+  
+  .grid .grid-header span {
+    padding: 0 5px;
+  }
+  
+  .grid .grid-header > .fa {
+    padding: 5px 10px 0 0;
+  }
+  
+  
+  .skill-tag{
+    padding-left: 10px;
+  }
+  .skill_bar{
+     width: 80%;
+     height: 400px;
+     /* background-color: burlywood; */
+     font-family:cursive ;
+  }
+  .Skill_bar{
+    background-color: rgb(207, 207, 204);
+    border-radius: 16px;
+    width: 40%;
+  }
+  .progressbar{
+
+    padding: 0.lem 16px;
+    border-radius: 16px;
+    text-align: center;
+    background: -webkit-linear-gradient(left, #f3f3f7, #155086);
+    
+  }
+  .button{
+
+    text-align: right;
+    padding-bottom: 5px;
+    border-radius: 16px;
+    padding-right: 5px;
+    
+    
+  }
+  .skills{
+    width: 100%;
+    background: -webkit-linear-gradient(left, #f3f3f7, #bed9f1);
+    border-radius: 16px;
+    padding-top: 5px;
+  }
+
+  
+  /*  */
+
+    </style>
+</head>
+
+<body>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="container bootstrap snippets bootdey">
+    <div class="row">
+        <!-- BEGIN USER PROFILE -->
+        <div class="col-md-12">
+            <div class="grid profile">
+                <div class="grid-header">
+                    <div class="col-xs-2">
+                        <img src=" " class="img-circle" alt="profile photo">
+                    </div>
+                    <div class="col-xs-7" >
+                        <h3>Atul Kumar MISHRA </h3>
+                        <p>@atul_m</p>
+                        <p>Website Developer, Programmer</p>
+                        <p> Satna , M.P. , INDIA</p>
+                    </div>
+                    <div class="col-xs-3 text-right"></div>
+                        <p>
+                            <a href="https://KAAM_KRO.com" title="Everyone can see your profile">
+                                <i class="fa fa-globe"></i> kaamkaro.com
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="grid-body">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#profile" data-toggle="tab">Profile</a></li>
+                        <li class="inactive"><a href="#skilltest" data-toggle="tab">Skill's</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <!-- BEGIN PROFILE -->
+                        <div class="tab-pane active" id="profile">
+                            <p class="lead">My Profile</p>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><strong>Email:</strong> <a href="kaamkro.com">tomanjerry7189@gmail.com</a></p>
+                                    <p><strong>About:</strong> Web Designer / Web Developer</p>
+                                    <p><strong>Hobbies:</strong> Read books, Research internet,  Designing website</p>
+                                    <p><strong>Address:</strong> Satna City, M.P., INDIA</p>
+                                    <p><strong>Phone:</strong> (+91) 8103110209</p>
+                                </div>
+                                <div class="col-md-6">
+                                      <p><strong>Skills:</strong> <span class="label label-primary">HTML</span>, <span class="label label-primary">CSS</span>,  <span class="label label-primary">JAVASCRIPT</span>,  <span class="label label-primary">PHP</span>, <span class="label label-primary">C</span>, <span class="label label-primary">JAVA</span>, <span class="label label-primary">PYTHON</span></p>
+                                    
+                                    <p><strong>Rating:</strong> <span class="text-yellow"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></span></p>
+                                  </div>
+                                 </div>
+                       
+                               </div>
+                    <!-- END PROFILE -->
+
+                   
+               
+
+                <!-- BEGIN SKILL TEST -->
+                <div class="tab-pane" id="skilltest">
+                <div class="skill_bar">
+                  <h2>Your skill's</h2>
+                  <hr>
+                  <div class="skills">
+                    <p class="skill-tag">HTML</p>
+                    <div class="Skill_bar">
+                    <div class="progressbar" style="width: 80%;">
+                      80%
+                    </div>
+                   </div>
+                   <div class="button">
+                    <button>Take Again </button>
+                   </div>
+                    </div>
+                    <br>
+                    <div class="skills">
+                      <p class="skill-tag">CSS</p>
+                      <div class="Skill_bar">
+                      <div class="progressbar" style="width: 00%;">
+                        00%
+                      </div>
+                     </div>
+                     <div class="button">
+                      <button>Take TEST </button>
+                     </div>
+                      </div>
+                      <br>
+                      <div class="skills">
+                        <p class="skill-tag">JAVA SCRIPT</p>
+                        <div class="Skill_bar">
+                        <div class="progressbar" style="width: 00%;">
+                          00%
+                        </div>
+                       </div>
+                       <div class="button">
+                        <button>Take TEST </button>
+                       </div>
+                        </div>
+                    </div>
+                    </div>
+               
+                     <!-- END SKILLS -->
+                    </div>
+            </div>
+        </div>
+    </div>
+    <!-- END USER PROFILE -->
+</div>
+</div>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	
+</script>
+</body>
+</html>
