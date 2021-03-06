@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Online Test</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /*  */
+    </style>
+</head>
+
+<body>
+    <!-- content here  -->
+    <div class="box" id="questionScreen">
+        <div class="title">
+            Online quiz application
+        </div>
+        <div class="header">
+            <div class="scoreBox">
+                score : <span></span>
+            </div>
+            <div class="timerBox">
+                Time left : <span></span>
+            </div>
+        </div>
+        <div class="questionBox">
+            <!-- "What does HTML stand for?" -->
+            <span></span>
+        </div>
+        <div class="optionBox">
+            <span onclick="checkAnswer(this)" data-opt="1"></span>
+            <span onclick="checkAnswer(this)" data-opt="2"></span>
+            <span onclick="checkAnswer(this)" data-opt="3"></span>
+            <span onclick="checkAnswer(this)" data-opt="4"></span>
+        </div>
+        <div class="footer">
+            <button onclick="showNext()">Next</button>
+            <button>Show result</button>
+        </div>
+    </div>
+    <div class="box" id="resultScreen" style="display: none;">
+        <div class="title">
+            Result
+        </div>
+        <div class="resultBox">
+            <label>Question</label>
+            <span id="totalQuestions">0</span>
+            <label for="">Attempt :</label>
+            <span id="attemptQuestions">0</span>
+            <label>Correct</label>
+            <span id="correctAnswers">0</span>
+            <label>Wrong</label>
+            <span id="wrongAnswers">0</span>
+        </div>
+        <div class="buttonBox">
+            <a href="profile_page.html">Home</a>
+        </div>
+
+    </div>
+
+</body>
+<script src="jquery-3.5.1.min.js"></script>
+<script src="quiz.js"></script>
+<script src="script.js"></script>
+
+</html>

@@ -30,6 +30,26 @@ def login_developer():
 def login_recruiter():
     return render_template('RECRUITER_SIGNUP.html')
 
+
+@app.route('/registration')
+def registration():
+    return render_template('Registration.html')
+
+
+@app.route('/test_page')
+def test_page():
+    return render_template('test_page.html')
+
+
+@app.route('/questions')
+def questions():
+    return render_template('questions.html')
+
+
+@app.route('/result')
+def result():
+    return render_template('result.html')
+
 # <---------------------------------------section for the developer---------------------------------------------------------------------------->
 
 
@@ -38,12 +58,12 @@ def login_validation_developer():
     users_developer = mongo.db.user
     l_email = request.form.get('l_email_d')
     l_passwd = request.form.get('l_password_d')
-    login_user_developer = users_developer.find_one({'username': l_email})
+    login_user_developer = users_developer.find_one(
+        {'username': l_email}, {'password': 1})
     if login_user_developer:
-        if users_developer.find_one({'password': l_passwd}):
-            return redirect('/user_profile')
-        return "Invalid password"
-    return "No user found"
+        if users_developer.find_one({'password': l_passwd}, {'password': 1}):
+            return redirect('/registration')
+    return render_template('/SIGNUP.html', message='Invalid username/password')
 
 
 @app.route('/add_user_developer', methods=['POST'])
@@ -58,7 +78,7 @@ def add_user_developer():
             users_developer.insert_one(
                 {'username': r_email, 'password': r_passwd})
             return redirect('/login_developer')
-        return "The user already exists"
+        return render_template('/SIGNUP.html', message='User already exists')
 
 
 # <------------------------------------------------Section for the recruiter---------------------------------------------------------------->
@@ -70,10 +90,9 @@ def login_validation():
     l_passwd = request.form.get('l_password_r')
     login_user_r = users_r.find_one({'username': l_email})
     if login_user_r:
-        if users_r.find_one({'password': l_passwd}):
+        if users_r.find_one({'password': l_passwd}, {'password': 1}):
             return "Recruiter successfully logged in"
-        return "Invalid password"
-    return "No user found"
+    return render_template('/RECRUITER_SIGNUP.html', message="Invalid username/password")
 
 
 @app.route('/add_user_recruiter', methods=['POST'])
@@ -87,7 +106,12 @@ def add_user():
             r_passwd = request.form.get('r_password_r')
             users_r.insert_one({'username': r_email, 'password': r_passwd})
             return redirect('/login_recruiter')
-        return "The user already exists"
+        return render_template('/RECRUITER_SIGNUP.html', message="User already exists")
+
+
+@app.route('/developer_information', methods=['POST'])
+def developer_information():
+    return "Developer information"
 
 
 if __name__ == '__main__':

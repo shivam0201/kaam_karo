@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST PAGE</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comfortaa', cursive;
+            background-image: url("bg.jpg");
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 940px;
+            background-color: cornsilk;
+            box-shadow: darkgrey;
+            min-height: 350px;
+            padding: 80px 90px;
+            border-radius: 16px;
+            display: flex;
+        }
+
+        .leftside,
+        .rightside {
+            width: 50%;
+
+        }
+
+        .rightside h1 {
+            color: darkslateblue;
+        }
+
+        .rightside h2 {
+            color: darkslateblue;
+            margin: 20px auto 10px;
+            font-size: 25px;
+        }
+
+        .rightside ul {
+            color: darkslateblue;
+            font-size: 18px;
+            margin-top: 5px;
+            font-weight: 600;
+            list-style-type: circle;
+            list-style-position: inside;
+        }
+
+        .rightside a {
+            background-color: deepskyblue;
+            border-radius: 100px;
+            color: wheat;
+            width: 100%;
+            display: inline-block;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 25px;
+            text-decoration: none;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="leftside">
+
+        </div>
+        <div class="rightside">
+            <h1>Welcome to online quiz</h1>
+            <h2>Instructions</h2>
+            <ul>
+                <li>10 questions (10 sec each)</li>
+                <li>all over time 200 sec</li>
+                <li>Random questions</li>
+                <li>Any time result</li>
+            </ul>
+            <a href="/templates/questions.html">Lets start a quiz</a>
+        </div>
+    </div>
+</body>
+<script src="./static/js/jquery-3.5.1.min.js"></script>
+<script src="./static/js/tilt.min.js"></script>
+<script>
+
+</script>
+
+</html>
