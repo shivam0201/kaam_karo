@@ -50,7 +50,7 @@ def questions():
 def result():
     return render_template('result.html')
 
-# <---------------------------------------section for the developer---------------------------------------------------------------------------->
+# <-------------------------------------------------section for the developer---------------------------------------------------------------->
 
 
 @app.route('/login_validation_developer', methods=['POST', 'GET'])
@@ -59,9 +59,11 @@ def login_validation_developer():
     l_email = request.form.get('l_email_d')
     l_passwd = request.form.get('l_password_d')
     login_user_developer = users_developer.find_one(
-        {'username': l_email}, {'password': 1})
+        {'username': l_email})
+    for passwd in users_developer.find({'username': l_email}, {'password': 1, '_id': 0}):
+        p_name = passwd['password']
     if login_user_developer:
-        if users_developer.find_one({'password': l_passwd}, {'password': 1}):
+        if p_name == l_passwd:
             return redirect('/registration')
     return render_template('/SIGNUP.html', message='Invalid username/password')
 
@@ -69,14 +71,13 @@ def login_validation_developer():
 @app.route('/add_user_developer', methods=['POST'])
 def add_user_developer():
     if request.method == 'POST':
-        users_developer = mongo.db.user
-        existing_user_developer = users_developer.find_one(
+        users_d = mongo.db.user
+        existing_user_developer = users_d.find_one(
             {'username': request.form.get('r_email_d')})
         if existing_user_developer is None:
             r_email = request.form.get('r_email_d')
             r_passwd = request.form.get('r_password_d')
-            users_developer.insert_one(
-                {'username': r_email, 'password': r_passwd})
+            users_d.insert_one({'username': r_email, 'password': r_passwd})
             return redirect('/login_developer')
         return render_template('/SIGNUP.html', message='User already exists')
 
@@ -89,8 +90,10 @@ def login_validation():
     l_email = request.form.get('l_email_r')
     l_passwd = request.form.get('l_password_r')
     login_user_r = users_r.find_one({'username': l_email})
+    for passwd in users_r.find({'username': l_email}, {'password': 1, '_id': 0}):
+        p_name = passwd['password']
     if login_user_r:
-        if users_r.find_one({'password': l_passwd}, {'password': 1}):
+        if l_passwd == p_name:
             return "Recruiter successfully logged in"
     return render_template('/RECRUITER_SIGNUP.html', message="Invalid username/password")
 
