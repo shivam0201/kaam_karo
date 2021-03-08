@@ -31,8 +31,8 @@ def login_recruiter():
     return render_template('RECRUITER_SIGNUP.html')
 
 
-@app.route('/registration/<string:user>')
-def registration():
+@app.route('/registration/<user>')
+def registration(user):
     return render_template('Registration.html')
 
 
@@ -44,11 +44,6 @@ def test_page():
 @app.route('/questions')
 def questions():
     return render_template('questions.html')
-
-
-@app.route('/result')
-def result():
-    return render_template('result.html')
 
 # <-------------------------------------------------section for the developer---------------------------------------------------------------->
 
@@ -64,7 +59,7 @@ def login_validation_developer():
         p_name = passwd['password']
     if login_user_developer:
         if p_name == l_passwd:
-            return redirect('/registration/', user=l_email)
+            return redirect('/registration', user=l_email)
     return render_template('/SIGNUP.html', message1='Invalid username/password')
 
 
