@@ -31,7 +31,7 @@ def login_recruiter():
     return render_template('RECRUITER_SIGNUP.html')
 
 
-@app.route('/registration')
+@app.route('/registration/<string:user>')
 def registration():
     return render_template('Registration.html')
 
@@ -64,8 +64,8 @@ def login_validation_developer():
         p_name = passwd['password']
     if login_user_developer:
         if p_name == l_passwd:
-            return redirect('/registration')
-    return render_template('/SIGNUP.html', message='Invalid username/password')
+            return redirect('/registration/', user=l_email)
+    return render_template('/SIGNUP.html', message1='Invalid username/password')
 
 
 @app.route('/add_user_developer', methods=['POST'])
@@ -79,7 +79,7 @@ def add_user_developer():
             r_passwd = request.form.get('r_password_d')
             users_d.insert_one({'username': r_email, 'password': r_passwd})
             return redirect('/login_developer')
-        return render_template('/SIGNUP.html', message='User already exists')
+        return render_template('/SIGNUP.html', message2='User already exists')
 
 
 # <------------------------------------------------Section for the recruiter---------------------------------------------------------------->
@@ -95,7 +95,7 @@ def login_validation():
     if login_user_r:
         if l_passwd == p_name:
             return "Recruiter successfully logged in"
-    return render_template('/RECRUITER_SIGNUP.html', message="Invalid username/password")
+    return render_template('/RECRUITER_SIGNUP.html', message3="Invalid username/password")
 
 
 @app.route('/add_user_recruiter', methods=['POST'])
@@ -109,7 +109,7 @@ def add_user():
             r_passwd = request.form.get('r_password_r')
             users_r.insert_one({'username': r_email, 'password': r_passwd})
             return redirect('/login_recruiter')
-        return render_template('/RECRUITER_SIGNUP.html', message="User already exists")
+        return render_template('/RECRUITER_SIGNUP.html', message4="User already exists")
 
 
 @app.route('/developer_information', methods=['POST'])
