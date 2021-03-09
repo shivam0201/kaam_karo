@@ -202,22 +202,12 @@
     <div class="title">
       Registration Form
     </div>
-    <form method="POST" action='/user_info/<{{ email }}>'>
+    <form method="POST" action='/user_info/{{ email }}'>
       <div class="inputfield">
         <label>User Name</label>
         <input type="text" name="user_name" class="input">
       </div>
 
-      <div class="inputfield">
-        <label>Gender</label>
-        <div class="custom_select">
-          <select>
-            <option value="">Select</option>
-            <option value="male" name="options">Male</option>
-            <option value="female" name="options">Female</option>
-          </select>
-        </div>
-      </div>
       <div class="inputfield">
         <label>About</label>
         <input type="text" name="about" class="input">
@@ -233,20 +223,6 @@
       <div class="inputfield">
         <label>Postal Code</label>
         <input type="text" name='postal_code' class="input">
-      </div>
-      <div class="inputfield">
-        <label>Skill' s</label>
-        <div class="custom_select">
-          <select multiple>
-            <option value="">Select</option>
-            <option value="HTML" name="m_option">HTML</option>
-            <option value="CSS" name="m_option">CSS</option>
-            <option value="CSS" name="m_option">CSS</option>
-            <option value="HTML" name="m_option">JAVASCRIPT</option>
-            <option value="HTML" name="m_option">C++</option>
-            <option value="HTML" name="m_option">JAVA</option>
-          </select>
-        </div>
       </div>
       <div class="inputfield terms">
         <label class="check">

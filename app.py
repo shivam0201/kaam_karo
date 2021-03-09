@@ -57,7 +57,6 @@ def recruiter_home():
 def login_validation_developer():
     users_developer = mongo.db.user
     l_email = request.form.get('l_email_d')
-    session['user'] = l_email
     l_passwd = request.form.get('l_password_d')
     login_user_developer = users_developer.find_one(
         {'email': l_email})
@@ -123,12 +122,10 @@ def user_info(email_id):
     email = email_id
     info = mongo.db.user
     username = request.form.get('user_name')
-    # search how to insert from options tag
     about = request.form.get('about')
     contact = request.form.get('phone_number')
     address = request.form.get('address')
     pin_code = request.form.get('postal_code')
-    # search how to insert from checkboxe tag
     info.update_one({'email': email}, {'$set': {'username': username, 'about': about,
                                                 'contact': contact, 'address': address, 'postal_code': pin_code}})
     return redirect(url_for('user_profile', emaill=email))
