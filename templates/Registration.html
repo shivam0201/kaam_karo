@@ -202,10 +202,10 @@
     <div class="title">
       Registration Form
     </div>
-    <form method="POST" action='/user_info'>
+    <form method="POST" action='/user_info/<{{ email }}>'>
       <div class="inputfield">
         <label>User Name</label>
-        <input type="text" name="name" class="input">
+        <input type="text" name="user_name" class="input">
       </div>
 
       <div class="inputfield">
@@ -220,7 +220,7 @@
       </div>
       <div class="inputfield">
         <label>About</label>
-        <input type="text" class="input">
+        <input type="text" name="about" class="input">
       </div>
       <div class="inputfield">
         <label>Phone Number</label>
@@ -232,7 +232,7 @@
       </div>
       <div class="inputfield">
         <label>Postal Code</label>
-        <input type="text" class="input">
+        <input type="text" name='postal_code' class="input">
       </div>
       <div class="inputfield">
         <label>Skill' s</label>
@@ -256,8 +256,8 @@
         <p>Agreed to terms and conditions</p>
       </div>
       <div class="inputfield">
+        <input type="submit" value="Register" class="btn">
     </form>
-    <input type="submit" value="Register" class="btn">
   </div>
   </div>
   </div>
