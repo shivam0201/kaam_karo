@@ -16,11 +16,6 @@ def home():
     return render_template('index.html')
 
 
-@app.route('/user_profile')
-def user_profile():
-    return render_template('profile_page.html')
-
-
 @app.route('/login_developer')
 def login_developer():
     return render_template('SIGNUP.html')
@@ -31,9 +26,14 @@ def login_recruiter():
     return render_template('RECRUITER_SIGNUP.html')
 
 
-@app.route('/registration/<user>')
-def registration(user):
+@app.route('/registration/<email_id>')
+def registration():
     return render_template('Registration.html')
+
+
+@app.route('/user_profile')
+def user_profile():
+    return render_template('profile_page.html')
 
 
 @app.route('/test_page')
@@ -45,6 +45,11 @@ def test_page():
 def questions():
     return render_template('questions.html')
 
+
+@app.route('/recruiter_home')
+def recruiter_home():
+    return render_template('recindex.html')
+
 # <-------------------------------------------------section for the developer---------------------------------------------------------------->
 
 
@@ -52,6 +57,7 @@ def questions():
 def login_validation_developer():
     users_developer = mongo.db.user
     l_email = request.form.get('l_email_d')
+    session['user'] = l_email
     l_passwd = request.form.get('l_password_d')
     login_user_developer = users_developer.find_one(
         {'username': l_email})
@@ -59,7 +65,8 @@ def login_validation_developer():
         p_name = passwd['password']
     if login_user_developer:
         if p_name == l_passwd:
-            return redirect('/registration', user=l_email)
+            # removed email_id = l_email
+            return redirect(url_for('user_info'), {'email_id': l_email})
     return render_template('/SIGNUP.html', message1='Invalid username/password')
 
 
@@ -70,9 +77,11 @@ def add_user_developer():
         existing_user_developer = users_d.find_one(
             {'username': request.form.get('r_email_d')})
         if existing_user_developer is None:
+            r_name = request.args.get('r_name_d')
             r_email = request.form.get('r_email_d')
             r_passwd = request.form.get('r_password_d')
-            users_d.insert_one({'username': r_email, 'password': r_passwd})
+            users_d.insert_one(
+                {'name': r_name, 'username': r_email, 'password': r_passwd})
             return redirect('/login_developer')
         return render_template('/SIGNUP.html', message2='User already exists')
 
@@ -89,7 +98,7 @@ def login_validation():
         p_name = passwd['password']
     if login_user_r:
         if l_passwd == p_name:
-            return "Recruiter successfully logged in"
+            return redirect('recruiter_home')
     return render_template('/RECRUITER_SIGNUP.html', message3="Invalid username/password")
 
 
@@ -100,16 +109,19 @@ def add_user():
         existing_user_r = users_r.find_one(
             {'username': request.form.get('r_email_r')})
         if existing_user_r is None:
+            r_name = request.form.get('r_name_r')
             r_email = request.form.get('r_email_r')
             r_passwd = request.form.get('r_password_r')
-            users_r.insert_one({'username': r_email, 'password': r_passwd})
+            users_r.insert_one(
+                {'name': r_name, 'username': r_email, 'password': r_passwd})
             return redirect('/login_recruiter')
         return render_template('/RECRUITER_SIGNUP.html', message4="User already exists")
 
 
-@app.route('/developer_information', methods=['POST'])
-def developer_information():
-    return "Developer information"
+# trying if dynamic data could be fetched
+@app.route('/user_info/<l_email_d>', methods=['POST'])
+def user_info(email_id):
+    return email_id
 
 
 if __name__ == '__main__':

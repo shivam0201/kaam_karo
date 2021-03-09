@@ -202,63 +202,62 @@
     <div class="title">
       Registration Form
     </div>
-    <form method="[post]" action='/developer_information'>
-      <div class="form">
-        <div class="inputfield">
-          <label>User Name</label>
-          <input type="text" name="name" class="input">
-        </div>
+    <form method="POST" action='/user_info'>
+      <div class="inputfield">
+        <label>User Name</label>
+        <input type="text" name="name" class="input">
+      </div>
 
-        <div class="inputfield">
-          <label>Gender</label>
-          <div class="custom_select">
-            <select>
-              <option value="">Select</option>
-              <option value="male" name="options">Male</option>
-              <option value="female" name="options">Female</option>
-            </select>
-          </div>
+      <div class="inputfield">
+        <label>Gender</label>
+        <div class="custom_select">
+          <select>
+            <option value="">Select</option>
+            <option value="male" name="options">Male</option>
+            <option value="female" name="options">Female</option>
+          </select>
         </div>
-        <div class="inputfield">
-          <label>About</label>
-          <input type="text" class="input">
+      </div>
+      <div class="inputfield">
+        <label>About</label>
+        <input type="text" class="input">
+      </div>
+      <div class="inputfield">
+        <label>Phone Number</label>
+        <input type="number" name="phone_number" class="input">
+      </div>
+      <div class="inputfield">
+        <label>Address</label>
+        <textarea class="textarea" name="address"></textarea>
+      </div>
+      <div class="inputfield">
+        <label>Postal Code</label>
+        <input type="text" class="input">
+      </div>
+      <div class="inputfield">
+        <label>Skill' s</label>
+        <div class="custom_select">
+          <select multiple>
+            <option value="">Select</option>
+            <option value="HTML" name="m_option">HTML</option>
+            <option value="CSS" name="m_option">CSS</option>
+            <option value="CSS" name="m_option">CSS</option>
+            <option value="HTML" name="m_option">JAVASCRIPT</option>
+            <option value="HTML" name="m_option">C++</option>
+            <option value="HTML" name="m_option">JAVA</option>
+          </select>
         </div>
-        <div class="inputfield">
-          <label>Phone Number</label>
-          <input type="number" name="phone_number" class="input">
-        </div>
-        <div class="inputfield">
-          <label>Address</label>
-          <textarea class="textarea" name="address"></textarea>
-        </div>
-        <div class="inputfield">
-          <label>Postal Code</label>
-          <input type="text" class="input">
-        </div>
-        <div class="inputfield">
-          <label>Skill's</label>
-          <div class="custom_select">
-            <select multiple>
-              <option value="">Select</option>
-              <option value="HTML" name="m_option">HTML</option>
-              <option value="CSS" name="m_option">CSS</option>
-              <option value="CSS" name="m_option">CSS</option>
-              <option value="HTML" name="m_option">JAVASCRIPT</option>
-              <option value="HTML" name="m_option">C++</option>
-              <option value="HTML" name="m_option">JAVA</option>
-            </select>
-          </div>
-        </div>
-        <div class="inputfield terms">
-          <label class="check">
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <p>Agreed to terms and conditions</p>
-        </div>
-        <div class="inputfield">
+      </div>
+      <div class="inputfield terms">
+        <label class="check">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <p>Agreed to terms and conditions</p>
+      </div>
+      <div class="inputfield">
     </form>
-    <a href="profile_page.html"> <input type="submit" value="Register" class="btn"></a>
+    <input type="submit" value="Register" class="btn">
   </div>
   </div>
   </div>
