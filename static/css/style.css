@@ -1,0 +1,27 @@
+
+
+
+
+h2{
+	font-family: Monospace
+}
+table{
+	 margin: 0 auto; 
+     font-size: 20px; 
+     border: 1px solid black; 
+}
+td { 
+     background-color: #b3e6ff; 
+     border: 1px solid black; 
+        } 
+th, 
+td { 
+     font-weight: bold; 
+     border: 1px solid black; 
+     padding: 10px; 
+     text-align: center; 
+        } 
+  
+td { 
+      font-weight: lighter; 
+        } 

@@ -179,7 +179,7 @@
       top: 0;
       width: 900px;
       height: 100%;
-      background-image: url(bg.jpg);
+      background-image: url(/static/img/bg.jpg);
       background-size: cover;
       transition: -webkit-transform 1.2s ease-in-out;
       transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
@@ -327,29 +327,35 @@
 </head>
 
 <body>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  
   <!-- <header style=" padding-bottom: 600px; text-align: center;">
         <h1>KAAM KRO</h1>
     </header> -->
   <div class="cont">
     <div class="form sign-in">
-      <h2>Sign In</h2>
-      <label>
-        <span>Email Address</span>
-        <input type="email" name="email">
-      </label>
-      <label>
-        <span>Password</span>
-        <input type="password" name="password">
-      </label>
-      <button class="submit" type="button">Sign In</button>
+      <form method="POST" action="/login_validation_developer">
+        <h2>Sign In Developer</h2>
+        <h3>{{ message1 }}</h3>
+        <label>
+          <span>Email Address</span>
+          <input type="email" name="l_email_d">
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" name="l_password_d">
+        </label>
+        <button class="submit" type="submit">Sign In</button>
+      </form>
       <p class="forgot-pass">Forgot Password ?</p>
 
       <div class="social-media">
         <ul>
-          <li><img src="facebook.png"></li>
-          <li><img src="twitter.png"></li>
-          <li><img src="linkedin.png"></li>
-          <li><img src="instagram.png"></li>
+          <li><img src="../static/img/facebook.png"></li>
+          <li><img src="../static/img/twitter.png"></li>
+          <li><img src="../static/img/linkedin.png"></li>
+          <li><img src="../static/img/instagram.png"></li>
         </ul>
       </div>
     </div>
@@ -370,28 +376,37 @@
         </div>
       </div>
       <div class="form sign-up">
-        <h2>Sign Up</h2>
-        <label>
-          <span>Name</span>
-          <input type="text" placeholder="ATUL MISHRA">
-        </label>
-        <label>
-          <span>Email</span>
-          <input type="email" placeholder="tomanjerry7189@gmail.com">
-        </label>
-        <label>
-          <span>Password</span>
-          <input type="password" placeholder=" hdbjbhc,bh">
-        </label>
-        <label>
-          <span>Confirm Password</span>
-          <input type="password" placeholder="hdbjbhc,bh">
-        </label>
-        <button type="button" class="submit">Sign Up Now</button>
+        <form method="POST" action="/add_user_developer">
+          <h2>Sign Up Developer</h2>
+          <h3>{{ message2 }}</h3>
+          <label>
+            <span>Name</span>
+            <input type="text" name="r_name_d" placeholder="ATUL MISHRA">
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="r_email_d" placeholder="tomanjerry7189@gmail.com">
+          </label>
+          <label>
+            <span>Password</span>
+            <input type="password" name="r_password_d" placeholder=" hdbjbhc,bh">
+          </label>
+          <label>
+            <span>Confirm Password</span>
+            <input type="password" placeholder="hdbjbhc,bh">
+          </label>
+          <button type="submit" class="submit">Sign Up Now</button>
+        </form>
       </div>
     </div>
   </div>
-  <script type="text/javascript" src="../static/script.js"></script>
+  <!-- <script type="text/javascript" src="../static/js/scrippt.js"></script> -->
+  <script>
+    document.querySelector('.img-btn').addEventListener('click', function myfunction() {
+      document.querySelector('.cont').classList.toggle('s-signup')
+    }
+    );
+  </script>
 </body>
 
 </html>

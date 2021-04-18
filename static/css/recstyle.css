@@ -1,0 +1,40 @@
+body {
+ background-image: url(../static/img/bg.jpg);
+ background-color: #ffffff;
+ background-repeat: no-repeat;
+ background-size: 100%;
+ background-size: cover;
+ background-blend-mode:normal;
+ background-position-x: center;
+ background-position-y: 50px;
+ min-height: 2;
+ padding-top:15px;
+ 
+}
+
+
+
+h2{ padding-top: 20%;
+    margin-top: 15%;
+	font-family: Monospace
+}
+table{
+	 margin: 10% auto; 
+     font-size: 20px; 
+     border: 1px solid black; 
+}
+td { 
+     background-color: #b3e6ff; 
+     border: 1px solid black; 
+        } 
+th, 
+td { 
+     font-weight: bold; 
+     border: 1px solid black; 
+     padding: 10px; 
+     text-align: center; 
+        } 
+  
+td { 
+      font-weight: lighter; 
+        } 

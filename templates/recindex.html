@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>recruiter page updated</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/recstyle.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/navstyle.css">
+</head>
+
+
+<body style="background-image: url(/static/img/bg1.jpg);">
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+  <header>
+    <a href="#" class="logo"><img src="../static/img/kaam_kro.png"></a>
+    <ul>
+      <li><a href="/home"><i class="fa fa-home"></i>Home</a></li>
+      <li><a href="#"><i class="fa fa-user"></i>About Us</a> </li>
+      <li><a href="#"><i class="fa fa-clone"></i>Services</a></li>
+      <li><a href="#"><i class="fa fa-file-text-o"></i>Portfolio</a></li>
+      <li><a href="#"><i class="fa fa-square-o"></i>Blogs</a></li>
+      <li><a href="#"><i class="fa fa-phone"></i>Contacts</a></li>
+    </ul>
+  </header>
+
+
+
+  <div class="content2">
+    <h1 class="heading">Welcome recruiter. <br>Find best people with our platform.</h1>
+    <div class="content">
+      <h2>Select skills you are looking for :- </h2>
+      <div class="innerform">
+        <a href="/result" class="button">HTML</a>
+        <a href="/result" class="button">CSS</a>
+        <a href="/result" class="button">Javascript</a>
+
+      </div>
+    </div>
+  </div>
+
+  <section class="banner"></section>
+  <script type="text/javascript">
+    window.addEventListener("scroll", function () {
+      let header = document.querySelector("header");
+      header.classList.toggle("sticky", window.scrollY > 0)
+    })
+  </script>
+</body>
+
+</html>
